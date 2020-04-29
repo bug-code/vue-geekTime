@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <!-- <img
+    <img
       alt="Vue logo"
       src="./assets/logo.png"
-    > -->
+    >
     <!--  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <p>{{msg}}</p>
     <input type="text" v-model="info" >
@@ -29,8 +29,8 @@ export default {
   },
   methods:{
     handClickAdd(){
+      console.log(this.info)
       this.list.push(this.info)
-      this.info = '';
     }
   },
   components: {
@@ -45,8 +45,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
+  margin-top: 60px;
 }
 </style>

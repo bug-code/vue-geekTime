@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <!-- <img
+    <img
       alt="Vue logo"
       src="./assets/logo.png"
-    > -->
+    >
     <!--  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <p>{{msg}}</p>
     <input type="text" v-model="info" >
     <button @click="handClickAdd">添加</button>
     <ul>
-      <todo-item v-for="(item ,index) in list" :key='index' :item = item></todo-item>
+      <TodoItem></TodoItem>
     </ul>
   </div>
 </template>
@@ -29,8 +29,7 @@ export default {
   },
   methods:{
     handClickAdd(){
-      this.list.push(this.info)
-      this.info = '';
+      console.log(this.info)
     }
   },
   components: {
@@ -45,8 +44,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
+  margin-top: 60px;
 }
 </style>

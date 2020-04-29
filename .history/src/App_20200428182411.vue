@@ -29,6 +29,7 @@ export default {
   },
   methods:{
     handClickAdd(){
+      console.log(this.info)
       this.list.push(this.info)
       this.info = '';
     }
