@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img
-      alt="Vue logo"
-      src="./assets/logo.png"
-    > -->
-    <!--  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <p>{{msg}}</p>
     <input type="text" v-model="info" >
     <button @click="handClickAdd">添加</button>
