@@ -4,7 +4,23 @@
     <input type="text" v-model="info" >
     <button @click="handClickAdd">添加</button>
     <ul>
-      <todo-item v-for="(item ,index) in list" :key='index' :item = item></todo-item>
+      <todo-item v-for="(item ,index) in list" :key='index'>
+        <template v-slot:item="itemProps">
+           <span :style="{fontSize:'20px',color:itemProps.check ? 'red': 'blue'}">{{item}}</span>
+        </template>
+        <template v-slot:header>
+          <h1>Here might be a page title</h1>
+        </template>
+
+        <template v-slot:default>
+          <p>A paragraph for the main content.</p>
+          <p>And another one.</p>
+        </template>
+
+        <template v-slot:footer>
+          <p>Here's some contact info</p>
+        </template>
+      </todo-item>
     </ul>
   </div>
 </template>
