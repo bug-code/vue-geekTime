@@ -8,7 +8,7 @@
         <template v-slot:item="itemProps">
            <span :style="{fontSize:'20px',color:itemProps.check ? 'red': 'blue'}">{{item}}</span>
         </template>
-        <template v-slot:header>
+        <!-- <template v-slot:header>
           <h1>Here might be a page title</h1>
         </template>
 
@@ -19,14 +19,28 @@
 
         <template v-slot:footer>
           <p>Here's some contact info</p>
-        </template>
+        </template> -->
       </todo-item>
     </ul>
+    <hr>
+    <props-page
+      :msg="msg"
+      title="Demo"
+      :is-published="false"
+      :comment-ids="list"
+      :type="type"
+      :author="{
+        name: 'Veronica',
+        company: 'Veridian Dynamics'
+      }"
+      class="propDemo"
+    ></props-page>
   </div>
 </template>
 
 <script>
 import TodoItem from "./components/TodoItem.vue";
+import Props from './components/props.vue';
 
 export default {
   name: "App",
@@ -34,7 +48,8 @@ export default {
     return {
       msg: "hello GeekTime",
       info: "",
-      list: []
+      list: [],
+      type:'successssss'
     };
   },
   methods:{
@@ -45,7 +60,8 @@ export default {
   },
   components: {
     // HelloWorld
-    TodoItem
+    TodoItem,
+   "props-page": Props
   }
 };
 </script>
