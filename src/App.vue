@@ -23,7 +23,7 @@
       </todo-item>
     </ul>
     <hr>
-    <props-page
+    <!-- <props-page
       :msg="msg"
       title="Demo"
       :is-published="false"
@@ -34,13 +34,20 @@
         company: 'Veridian Dynamics'
       }"
       class="propDemo"
-    ></props-page>
+    ></props-page> -->
+    <evevt-page @change="upData" :valueName="info"></evevt-page>
+    <h1>{{info}}</h1>
+    <directive-page></directive-page>
   </div>
 </template>
 
 <script>
 import TodoItem from "./components/TodoItem.vue";
-import Props from './components/props.vue';
+// import Props from './components/props.vue';
+import Event from './components/Event.vue';
+
+import Directive from './components/directive.vue';
+
 
 export default {
   name: "App",
@@ -49,19 +56,25 @@ export default {
       msg: "hello GeekTime",
       info: "",
       list: [],
-      type:'successssss'
+      type:'successssss',
+
     };
   },
   methods:{
     handClickAdd(){
       this.list.push(this.info)
       this.info = '';
+    },
+    upData(data){
+      this.info = data;
     }
   },
   components: {
     // HelloWorld
     TodoItem,
-   "props-page": Props
+  //  "props-page": Props,
+   "evevt-page":Event,
+   "directive-page":Directive,
   }
 };
 </script>
